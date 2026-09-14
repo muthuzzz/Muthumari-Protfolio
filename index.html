@@ -889,7 +889,7 @@
       }
       .timeline-dot {
         position: absolute;
-        left: -36px;
+        left: -33px;
         top: 24px;
         width: 12px;
         height: 12px;
@@ -1178,6 +1178,15 @@
         background: linear-gradient(90deg, var(--purple), var(--pink));
         transition: width 1.4s var(--ease);
       }
+      /* FIX: these two elements are real children of the process-grid, so on
+         desktop (where the grid is 4 columns) they must be taken OUT of the
+         grid flow entirely — otherwise they eat two grid cells and push
+         steps 03/04 onto a second row. They are re-enabled only inside the
+         mobile media query below. */
+      .process-track,
+      .process-fill {
+        display: none;
+      }
       .step {
         position: relative;
         padding-right: 22px;
@@ -1198,7 +1207,8 @@
         z-index: 2;
         transition: 0.4s;
       }
-      .step:hover .step-no {
+      .step:hover .step-no,
+      .step-no.active {
         background: var(--purple);
         border-color: var(--purple);
         transform: scale(1.08);
@@ -1438,6 +1448,10 @@
         top: -170px;
         opacity: 0.65;
       }
+      .contact-box > div:first-child {
+        position: relative;
+        z-index: 1;
+      }
       .contact-box h2 {
         font-size: clamp(30px, 4.2vw, 46px);
       }
@@ -1669,7 +1683,7 @@
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          gap: 22px;
+          gap: 16px;
           opacity: 0;
           pointer-events: none;
           transform: translateY(-15px);
@@ -1682,8 +1696,8 @@
         }
         .mobile-menu a {
           font-family: "Manrope";
-          font-size: 25px;
-          font-weight: 800;
+          font-size: 20px;
+          font-weight: 700;
           color: var(--deep);
         }
         .mobile-close {
@@ -1728,16 +1742,52 @@
         }
         .process-grid {
           grid-template-columns: 1fr;
-          gap: 28px;
+          gap: 0;
+          position: relative;
+          padding-left: 0;
         }
         .process-grid:before,
         .process-grid:after {
           display: none;
         }
+        /* FIX: re-enable the mobile connector line here (it's display:none
+           by default now, so this override is required) */
+        .process-track,
+        .process-fill {
+          display: block;
+          position: absolute;
+          left: 27px;
+          top: 27px;
+          bottom: 27px;
+          width: 2px;
+        }
+        .process-track {
+          background: rgba(255, 255, 255, 0.2);
+        }
+        .process-fill {
+          background: linear-gradient(var(--purple), var(--pink));
+          height: 0;
+          transition: height 0.15s linear;
+        }
         .step {
-          padding-right: 0;
-          padding-left: 20px;
-          border-left: 2px solid rgba(255, 255, 255, 0.2);
+          display: grid;
+          grid-template-columns: 54px 1fr;
+          column-gap: 18px;
+          align-items: start;
+          padding: 0 0 32px;
+        }
+        .step:last-child {
+          padding-bottom: 0;
+        }
+        .step-no {
+          grid-row: 1 / 3;
+        }
+        .step h3 {
+          margin-top: 0;
+          align-self: center;
+        }
+        .step p {
+          grid-column: 2;
         }
         .skills-grid {
           grid-template-columns: 1fr;
@@ -1807,7 +1857,11 @@
           padding-left: 26px;
         }
         .timeline-dot {
-          left: -32px;
+          left: -37px;
+        }
+        .timeline:before,
+        .timeline-fill {
+          left: -6px;
         }
         .timeline-top {
           flex-direction: column;
@@ -1825,6 +1879,22 @@
           padding: 26px 20px;
           border-radius: 22px;
         }
+
+        .contact-box:before {
+          width: 220px;
+          height: 220px;
+          right: -90px;
+          top: -110px;
+        }
+        .step-no {
+          width: 35px;
+          height: 35px;
+          font-size: 12px;
+          left:10px;
+        }
+        .step {
+          grid-template-columns: 40px 1fr;
+        }
         .footer-row {
           flex-direction: column;
           align-items: flex-start;
@@ -1834,6 +1904,18 @@
         }
         .section-head {
           margin-bottom: 22px;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+        .to-top {
+          align-self: flex-end;
+          flex-shrink: 0;
+          background: var(--deep);
+          color: #fff;
+          border-color: transparent;
         }
       }
       @media (prefers-reduced-motion: reduce) {
@@ -2433,6 +2515,9 @@
           <p>Useful for clients who may not know exactly what they need yet.</p>
         </div>
         <div class="process-grid stagger" id="processGrid">
+          <div class="process-track"></div>
+          <div class="process-fill" id="processFill"></div>
+
           <div class="step">
             <div class="step-no">01</div>
             <h3>Understand</h3>
@@ -2587,85 +2672,6 @@
         </div>
       </div>
     </section>
-
-    <!-- FAQ -->
-    <!-- <section class="tint-section" id="faq">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">FAQ</span>
-          <h2>Answers before you ask.</h2>
-          <p>
-            Common questions from businesses considering a freelance website
-            project.
-          </p>
-        </div>
-        <div class="faq-list stagger" id="faqList">
-          <div class="faq-item">
-            <button class="faq-q">
-              How long does a typical website take?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a-wrap">
-              <p class="faq-a">
-                Most small business sites take 1–2 weeks from the planning call
-                to final delivery, depending on the number of pages and how
-                quickly content and feedback come in.
-              </p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q">
-              What do you need from me to get started?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a-wrap">
-              <p class="faq-a">
-                Just your business details, the pages you want, any logo or
-                brand colors you have, and a couple of reference websites you
-                like the look of.
-              </p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q">
-              Do you offer revisions?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a-wrap">
-              <p class="faq-a">
-                Yes — a round or two of revisions is included so the final site
-                matches what you had in mind before it goes live.
-              </p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q">
-              Will my website work on mobile?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a-wrap">
-              <p class="faq-a">
-                Every site I build is fully responsive, so it looks and works
-                well on phones, tablets and desktops.
-              </p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q">
-              How much does a website cost?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a-wrap">
-              <p class="faq-a">
-                Pricing depends on the number of pages and features needed.
-                Share your requirements and I'll send a clear quote before we
-                start.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
 
     <!-- FAQ -->
     <section id="faq">
@@ -2946,7 +2952,7 @@
           ringObserver.observe(card);
         });
 
-        // Process connecting line fills once in view
+        // Process connecting line fills once in view (desktop horizontal line)
         const processGrid = document.getElementById("processGrid");
         if (processGrid) {
           const po = new IntersectionObserver(
@@ -3145,6 +3151,54 @@
           wrap.style.maxHeight = !isOpen ? wrap.scrollHeight + "px" : null;
         });
       });
+
+      function processMobileHighlight() {
+        const vh = window.innerHeight;
+        let reachedIdx = -1;
+        stepNos.forEach((el, i) => {
+          const r = el.getBoundingClientRect();
+          if (r.top < vh * 0.65) reachedIdx = i;
+        });
+        stepNos.forEach((el, i) => {
+          el.classList.toggle("active", i <= reachedIdx);
+        });
+      }
+      // Mobile process line fill, scroll-linked
+      const processFill = document.getElementById("processFill");
+      const processGridEl = document.getElementById("processGrid");
+      function processMobileProgress() {
+        if (!processGridEl || !processFill || window.innerWidth > 950) return;
+        const r = processGridEl.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const p = Math.max(
+          0,
+          Math.min(1, (vh * 0.72 - r.top) / (r.height + vh * 0.15)),
+        );
+        processFill.style.height = p * 100 + "%";
+      }
+      document.addEventListener("scroll", processMobileProgress, {
+        passive: true,
+      });
+      window.addEventListener("resize", processMobileProgress);
+      processMobileProgress();
+
+      // Auto-cycle step highlight — cumulative (1, then 1+2, then 1+2+3, then all 4, then reset)
+      const stepNos = document.querySelectorAll(".step-no");
+      if (
+        stepNos.length &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        let stepIdx = 0;
+        function cycleSteps() {
+          stepNos.forEach((el, i) => {
+            el.classList.toggle("active", i <= stepIdx);
+          });
+          stepIdx = (stepIdx + 1) % stepNos.length;
+          // pause a bit longer on the "all lit" frame before resetting
+          setTimeout(cycleSteps, stepIdx === 0 ? 1800 : 1000);
+        }
+        cycleSteps();
+      }
     </script>
   </body>
 </html>
