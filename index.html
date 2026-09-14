@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -1479,6 +1479,72 @@
       .contact-note .btn {
         width: 100%;
       }
+
+      /* FAQ */
+      .faq-list {
+        max-width: 780px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .faq-item {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        transition: 0.4s var(--ease);
+      }
+      .faq-item.open {
+        border-color: #d9c3f6;
+        box-shadow: var(--shadow-sm);
+      }
+      .faq-q {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 20px 22px;
+        background: none;
+        border: none;
+        text-align: left;
+        font-family: "Manrope", sans-serif;
+        font-weight: 700;
+        font-size: 15.5px;
+        color: var(--deep);
+        cursor: pointer;
+      }
+      .faq-icon {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--surface2);
+        color: var(--purple);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 800;
+        transition: 0.4s var(--ease);
+      }
+      .faq-item.open .faq-icon {
+        transform: rotate(45deg);
+        background: linear-gradient(135deg, var(--purple), var(--pink));
+        color: #fff;
+      }
+      .faq-a-wrap {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s var(--ease);
+      }
+      .faq-a {
+        padding: 0 22px 20px;
+        font-size: 13.5px;
+        color: var(--muted);
+        max-width: 640px;
+      }
       /* footer */
       footer {
         position: relative;
@@ -1598,7 +1664,7 @@
           position: fixed;
           inset: 0;
           background: rgba(252, 250, 255, 0.98);
-          z-index: 999;
+          z-index: 1100;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -1661,11 +1727,17 @@
           grid-template-columns: 1fr 1fr;
         }
         .process-grid {
-          grid-template-columns: 1fr 1fr;
-          gap: 32px;
+          grid-template-columns: 1fr;
+          gap: 28px;
         }
-        .process-grid:before {
+        .process-grid:before,
+        .process-grid:after {
           display: none;
+        }
+        .step {
+          padding-right: 0;
+          padding-left: 20px;
+          border-left: 2px solid rgba(255, 255, 255, 0.2);
         }
         .skills-grid {
           grid-template-columns: 1fr;
@@ -1834,7 +1906,8 @@
           ><a href="#projects" data-nav>Projects</a
           ><a href="#freelance" data-nav>Freelance</a
           ><a href="#services" data-nav>Services</a
-          ><a href="#contact" data-nav>Contact</a>
+          ><a href="#faq" data-nav>FAQ</a>
+          <a href="#contact" data-nav>Contact</a>
         </div>
         <a class="btn btn-primary nav-cta magnetic" href="#contact"
           >Start a project</a
@@ -1849,7 +1922,9 @@
       ><a href="#home">Home</a><a href="#about">About</a
       ><a href="#experience">Experience</a><a href="#skills">Skills</a
       ><a href="#projects">Projects</a><a href="#freelance">Freelance work</a
-      ><a href="#services">Services</a><a href="#contact">Contact</a>
+      ><a href="#services">Services</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </div>
 
     <!-- HERO -->
@@ -2513,6 +2588,171 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <!-- <section class="tint-section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Answers before you ask.</h2>
+          <p>
+            Common questions from businesses considering a freelance website
+            project.
+          </p>
+        </div>
+        <div class="faq-list stagger" id="faqList">
+          <div class="faq-item">
+            <button class="faq-q">
+              How long does a typical website take?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a-wrap">
+              <p class="faq-a">
+                Most small business sites take 1–2 weeks from the planning call
+                to final delivery, depending on the number of pages and how
+                quickly content and feedback come in.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              What do you need from me to get started?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a-wrap">
+              <p class="faq-a">
+                Just your business details, the pages you want, any logo or
+                brand colors you have, and a couple of reference websites you
+                like the look of.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              Do you offer revisions?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a-wrap">
+              <p class="faq-a">
+                Yes — a round or two of revisions is included so the final site
+                matches what you had in mind before it goes live.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              Will my website work on mobile?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a-wrap">
+              <p class="faq-a">
+                Every site I build is fully responsive, so it looks and works
+                well on phones, tablets and desktops.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">
+              How much does a website cost?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a-wrap">
+              <p class="faq-a">
+                Pricing depends on the number of pages and features needed.
+                Share your requirements and I'll send a clear quote before we
+                start.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Answers before you ask.</h2>
+          <p>
+            Common questions from businesses considering a freelance website
+            project.
+          </p>
+        </div>
+
+        <div class="faq-list stagger">
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              <span>What type of websites do you create?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a-wrap">
+              <div class="faq-a">
+                I create modern, responsive websites for businesses, personal
+                brands, portfolios, coaching centres, salons and other local
+                businesses.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              <span>Can you redesign an existing website?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a-wrap">
+              <div class="faq-a">
+                Yes. I can improve the layout, visual design, responsiveness,
+                content presentation and overall user experience of an existing
+                website.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              <span>Do you create mobile-friendly websites?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a-wrap">
+              <div class="faq-a">
+                Yes. I design websites to work smoothly across mobile phones,
+                tablets and desktop screens.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              <span
+                >Can you help with website content and social media
+                designs?</span
+              >
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a-wrap">
+              <div class="faq-a">
+                Yes. I can also help with content layout, social media
+                creatives, basic digital marketing materials and visual content.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              <span>How can I start a project with you?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a-wrap">
+              <div class="faq-a">
+                You can contact me through the contact section and share your
+                requirements, preferred style and project details. We can then
+                discuss the scope and next steps.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- CONTACT -->
     <section id="contact">
       <div class="container">
@@ -2764,6 +3004,7 @@
           "projects",
           "freelance",
           "services",
+          "faq",
           "contact",
         ];
         function activeNav() {
@@ -2867,14 +3108,19 @@
 
         // Mobile menu
         function toggle(v) {
-          mobile.classList.toggle("open", v);
+          const willOpen = v ?? !mobile.classList.contains("open");
+          mobile.classList.toggle("open", willOpen);
+          htmlEl.classList.toggle("locked", willOpen); // lock background scroll while open
+          hamb?.setAttribute("aria-expanded", String(willOpen));
         }
-        hamb?.addEventListener("click", () => toggle(true));
+        hamb?.addEventListener("click", () => toggle());
         close?.addEventListener("click", () => toggle(false));
         mobile
           ?.querySelectorAll("a")
           .forEach((a) => a.addEventListener("click", () => toggle(false)));
-
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") toggle(false);
+        });
         // Back to top
         document
           .getElementById("toTop")
@@ -2882,6 +3128,23 @@
             window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }),
           );
       })();
+
+      // FAQ accordion
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        const btn = item.querySelector(".faq-q");
+        const wrap = item.querySelector(".faq-a-wrap");
+        btn.addEventListener("click", () => {
+          const isOpen = item.classList.contains("open");
+          document.querySelectorAll(".faq-item.open").forEach((other) => {
+            if (other !== item) {
+              other.classList.remove("open");
+              other.querySelector(".faq-a-wrap").style.maxHeight = null;
+            }
+          });
+          item.classList.toggle("open", !isOpen);
+          wrap.style.maxHeight = !isOpen ? wrap.scrollHeight + "px" : null;
+        });
+      });
     </script>
   </body>
 </html>
