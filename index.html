@@ -1,23 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
       Muthumari Rajendran | Software Developer &amp; Freelance Digital Creative
     </title>
-    <meta
-      name="description"
-      content="Muthumari Rajendran — Software Developer and Freelance Digital Creative. Website design, frontend development and digital creative work."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/jpeg" href="images/Muthumari-rajendran.jpeg" />
-    <style>
+<meta content="Muthumari Rajendran — Software Developer and Freelance Digital Creative. Website design, frontend development and digital creative work." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="images/Muthumari-rajendran.jpeg" rel="icon" type="image/jpeg"/>
+<style>
       :root {
         --bg: #fcfaff;
         --surface: #fff;
@@ -774,89 +768,146 @@
           transform: translateX(-50%);
         }
       }
-      /* about */
+      /* about — refined editorial layout */
       .about-grid {
         display: grid;
-        grid-template-columns: 0.8fr 1.2fr;
-        gap: 70px;
+        grid-template-columns: minmax(300px, 0.78fr) minmax(0, 1.22fr);
+        gap: 64px;
         align-items: center;
       }
       .about-photo {
         position: relative;
+        padding: 14px 0 14px 14px;
+      }
+      .about-photo:before {
+        content: "01 / ABOUT";
+        position: absolute;
+        left: -2px;
+        top: 2px;
+        z-index: 3;
+        font-family: "Manrope", sans-serif;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        color: var(--purple);
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 8px 11px;
+        box-shadow: 0 10px 24px rgba(56, 32, 95, 0.08);
+      }
+      .about-photo:after {
+        content: "DEVELOPER · DESIGNER";
+        position: absolute;
+        right: 2px;
+        bottom: 2px;
+        z-index: 3;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        color: var(--deep);
+        background: linear-gradient(135deg, #fff, #f7efff);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 9px 11px;
+        box-shadow: 0 10px 24px rgba(56, 32, 95, 0.1);
       }
       .about-photo .image-slot {
         width: 100%;
-        max-width: 340px;
-        aspect-ratio: 4/5;
-        border-radius: 150px 28px 28px 28px;
+        max-width: 330px;
+        aspect-ratio: 4 / 5;
+        border-radius: 120px 26px 26px 26px;
         overflow: hidden;
         border: 7px solid #fff;
         box-shadow: var(--shadow);
+        position: relative;
+      }
+      .about-photo .image-slot:after {
+        content: "";
+        position: absolute;
+        inset: 10px;
+        border: 1px solid rgba(124, 58, 237, 0.16);
+        border-radius: 106px 18px 18px 18px;
+        pointer-events: none;
+      }
+      .about-copy {
+        max-width: 720px;
+      }
+      .about-copy .section-head {
+        margin: 10px 0 18px;
+        max-width: 650px;
+      }
+      .about-copy .section-head h2 {
+        font-size: clamp(30px, 4.2vw, 50px);
+        margin-top: 0;
       }
       .about-copy p {
         color: var(--muted);
-        font-size: 16px;
-        margin-bottom: 16px;
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 13px;
         max-width: 620px;
       }
-      .quote {
-        margin-top: 25px;
-        background: var(--surface2);
-        border: 1px solid var(--line);
-        padding: 20px 22px;
-        border-radius: 18px;
-        font-family: "Manrope";
-        font-weight: 700;
-        color: var(--deep);
+      .about-copy p:first-of-type {
+        color: var(--text);
+        font-weight: 600;
       }
-      /* capabilities */
       .cap-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+        gap: 12px;
+        margin-top: 22px;
       }
       .cap-card {
-        background: #fff;
+        background: rgba(255, 255, 255, 0.88);
         border: 1px solid var(--line);
-        border-radius: 22px;
-        padding: 22px;
-        min-height: 180px;
-        transition: 0.5s var(--ease);
+        border-radius: 18px;
+        padding: 16px;
+        min-height: 118px;
+        transition: 0.45s var(--ease);
         position: relative;
         overflow: hidden;
       }
       .cap-card:before {
         content: "";
         position: absolute;
-        width: 100px;
-        height: 100px;
+        width: 76px;
+        height: 76px;
         border-radius: 50%;
         background: #eee2ff;
-        right: -40px;
-        top: -40px;
+        right: -34px;
+        top: -34px;
         transition: 0.5s;
       }
       .cap-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow);
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-sm);
+        border-color: #d9c3f6;
       }
       .cap-card:hover:before {
-        transform: scale(1.6);
+        transform: scale(1.45);
       }
       .cap-number {
+        position: relative;
+        z-index: 1;
         font-family: "Manrope";
         font-weight: 800;
         color: var(--purple);
-        font-size: 11px;
+        font-size: 10px;
         letter-spacing: 0.1em;
       }
       .cap-card h3 {
-        font-size: 19px;
-        margin: 24px 0 7px;
+        position: relative;
+        z-index: 1;
+        font-size: 18px;
+        margin: 17px 0 5px;
       }
       .cap-card p {
-        font-size: 13px;
+        position: relative;
+        z-index: 1;
+        font-size: 12px;
         color: var(--muted);
+        margin: 0;
       }
       /* experience */
       .timeline {
@@ -951,99 +1002,100 @@
         color: var(--deep);
         border-radius: 100px;
       }
-      /* selected work */
+      /* projects — compact 4-card showcase */
       .work-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 15px;
+        align-items: stretch;
       }
       .project-card {
         background: #fff;
         border: 1px solid var(--line);
-        border-radius: 24px;
+        border-radius: 20px;
         overflow: hidden;
-        transition: 0.55s var(--ease);
+        transition: 0.5s var(--ease);
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
       }
       .project-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow);
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-sm);
       }
       .project-visual {
-        height: 230px;
-        padding: 14px;
-        background: linear-gradient(135deg, #f2e9ff, #fff5fb);
+        height: 150px;
+        padding: 8px;
+        background: linear-gradient(135deg, #f1e8ff, #fff5fb);
         position: relative;
         overflow: hidden;
       }
       .project-visual .image-slot {
         width: 100%;
         height: 100%;
-        border-radius: 18px;
+        border-radius: 14px;
         overflow: hidden;
       }
       .project-visual .image-placeholder {
         height: 100%;
-        border-radius: 18px;
+        border-radius: 14px;
       }
       .project-visual:after {
         content: "";
         position: absolute;
-        inset: 14px;
+        inset: 8px;
         border: 1px solid rgba(124, 58, 237, 0.12);
-        border-radius: 18px;
+        border-radius: 14px;
         pointer-events: none;
       }
       .project-label {
         position: absolute;
-        left: 26px;
-        top: 26px;
+        left: 18px;
+        top: 18px;
         z-index: 3;
         background: #fff;
         border-radius: 100px;
-        padding: 6px 11px;
-        font-size: 10px;
+        padding: 5px 9px;
+        font-size: 9px;
         font-weight: 800;
         color: var(--purple);
         box-shadow: 0 8px 20px rgba(56, 32, 95, 0.12);
       }
       .project-body {
-        padding: 20px 22px 24px;
+        padding: 15px 16px 17px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
       }
       .project-body h3 {
-        font-size: 21px;
+        font-size: 17px;
+        line-height: 1.2;
       }
       .project-type {
-        font-size: 11px;
+        font-size: 10px;
         color: var(--purple);
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 0.06em;
-        margin: 5px 0 10px;
+        margin: 5px 0 7px;
       }
       .project-body p {
         color: var(--muted);
-        font-size: 13px;
+        font-size: 12px;
+        line-height: 1.55;
+        margin: 0;
       }
       .project-meta {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 12px;
-        margin-top: 16px;
+        margin-top: auto;
+        padding-top: 10px;
       }
       .project-meta small {
         color: var(--muted);
-        font-size: 11px;
-      }
-      .view-link {
-        font-size: 12px;
-        font-weight: 800;
-        color: var(--deep);
-        transition: 0.3s;
-      }
-      .project-card:hover .view-link {
-        color: var(--purple);
-        transform: translateX(5px);
+        font-size: 10px;
       }
       /* freelance featured */
       .freelance-work {
@@ -1178,11 +1230,6 @@
         background: linear-gradient(90deg, var(--purple), var(--pink));
         transition: width 1.4s var(--ease);
       }
-      /* FIX: these two elements are real children of the process-grid, so on
-         desktop (where the grid is 4 columns) they must be taken OUT of the
-         grid flow entirely — otherwise they eat two grid cells and push
-         steps 03/04 onto a second row. They are re-enabled only inside the
-         mobile media query below. */
       .process-track,
       .process-fill {
         display: none;
@@ -1666,6 +1713,11 @@
         color: var(--deep);
       }
       /* mobile */
+      @media (max-width: 1100px) {
+        .work-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
       @media (max-width: 950px) {
         .nav-links,
         .nav-wrap .nav-cta {
@@ -1750,8 +1802,6 @@
         .process-grid:after {
           display: none;
         }
-        /* FIX: re-enable the mobile connector line here (it's display:none
-           by default now, so this override is required) */
         .process-track,
         .process-fill {
           display: block;
@@ -1801,6 +1851,28 @@
         .contact-box {
           grid-template-columns: 1fr;
           padding: 36px 28px;
+        }
+      }
+      @media (max-width: 620px) {
+        .work-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        .project-visual {
+          height: 180px;
+        }
+        .about-grid {
+          gap: 34px;
+        }
+        .about-photo {
+          padding-left: 10px;
+        }
+        .about-photo .image-slot {
+          max-width: 310px;
+        }
+        .about-photo:after {
+          right: 0;
+          bottom: -3px;
         }
       }
       @media (max-width: 620px) {
@@ -1890,7 +1962,7 @@
           width: 35px;
           height: 35px;
           font-size: 12px;
-          left:10px;
+          left: 10px;
         }
         .step {
           grid-template-columns: 40px 1fr;
@@ -1938,909 +2010,609 @@
           transform: none !important;
         }
       }
-    </style>
-  </head>
-  <body>
-    <!-- LOADER -->
-    <div id="intro" aria-hidden="true">
-      <div class="loader-core">
-        <svg
-          class="mono"
-          viewBox="0 0 260 140"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path class="m-path" d="M 14 118 L 14 22 L 52 84 L 90 22 L 90 118" />
-          <path
-            class="r-path"
-            d="M 128 118 L 128 22 L 168 22 C 190 22 190 60 168 60 L 128 60 M 160 60 L 196 118"
-          />
-        </svg>
-        <span class="load-caption"
-          >Muthumari Rajendran — Developer &amp; Digital Creative</span
-        >
-      </div>
-    </div>
+    
+/* FINAL ABOUT CARD SIZE POLISH */
+.cap-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+.cap-card{min-height:92px;padding:13px 14px;border-radius:15px}
+.cap-number{font-size:9px}
+.cap-card h3{font-size:15px;margin:11px 0 3px}
+.cap-card p{font-size:11px;line-height:1.4}
+@media(max-width:950px){.cap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.cap-grid{grid-template-columns:1fr;gap:10px}.cap-card{min-height:88px}}
 
-    <svg width="0" height="0" style="position: absolute">
-      <defs>
-        <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#7c3aed" />
-          <stop offset="100%" stop-color="#e78acb" />
-        </linearGradient>
-      </defs>
-    </svg>
-    <div class="progress" id="progress"></div>
-    <div class="bg-orb one"></div>
-    <div class="bg-orb two"></div>
-    <div class="bg-orb three"></div>
-    <div id="cursor"></div>
-
-    <div class="nav-wrap">
-      <nav id="nav">
-        <a class="brand" href="#home"
-          ><strong>Muthumari Rajendran</strong
-          ><span>Developer · Designer · Digital Creative</span></a
-        >
-        <div class="nav-links">
-          <a href="#about" data-nav>About</a
-          ><a href="#experience" data-nav>Experience</a
-          ><a href="#skills" data-nav>Skills</a
-          ><a href="#projects" data-nav>Projects</a
-          ><a href="#freelance" data-nav>Freelance</a
-          ><a href="#services" data-nav>Services</a
-          ><a href="#faq" data-nav>FAQ</a>
-          <a href="#contact" data-nav>Contact</a>
-        </div>
-        <a class="btn btn-primary nav-cta magnetic" href="#contact"
-          >Start a project</a
-        >
-        <button class="hamb" id="hamb" aria-label="Open menu">
-          <span></span><span></span><span></span>
-        </button>
-      </nav>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <button class="mobile-close" id="mobileClose">×</button
-      ><a href="#home">Home</a><a href="#about">About</a
-      ><a href="#experience">Experience</a><a href="#skills">Skills</a
-      ><a href="#projects">Projects</a><a href="#freelance">Freelance work</a
-      ><a href="#services">Services</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </div>
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="hero-kicker">
+/* SOFTWARE-WORK 2-CARD LAYOUT (recruiter section, kept compact & separate from client work) */
+.work-grid.compact-2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px;margin:0 auto}
+@media(max-width:620px){.work-grid.compact-2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<!-- LOADER -->
+<div aria-hidden="true" id="intro">
+<div class="loader-core">
+<svg class="mono" viewbox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
+<path class="m-path" d="M 14 118 L 14 22 L 52 84 L 90 22 L 90 118"></path>
+<path class="r-path" d="M 128 118 L 128 22 L 168 22 C 190 22 190 60 168 60 L 128 60 M 160 60 L 196 118"></path>
+</svg>
+<span class="load-caption">Muthumari Rajendran — Developer &amp; Digital Creative</span>
+</div>
+</div>
+<svg height="0" style="position: absolute" width="0">
+<defs>
+<lineargradient id="ring-gradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#7c3aed"></stop>
+<stop offset="100%" stop-color="#e78acb"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="progress" id="progress"></div>
+<div class="bg-orb one"></div>
+<div class="bg-orb two"></div>
+<div class="bg-orb three"></div>
+<div id="cursor"></div>
+<div class="nav-wrap">
+<nav id="nav">
+<a class="brand" href="#home"><strong>Muthumari Rajendran</strong><span>Developer · Designer · Digital Creative</span></a>
+<div class="nav-links">
+<a data-nav="" href="#work">Work</a>
+<a data-nav="" href="#services">Services</a>
+<a data-nav="" href="#about">About</a><a data-nav="" href="#experience">Experience</a><a data-nav="" href="#skills">Skills</a>
+<a data-nav="" href="#faq">FAQ</a>
+</div>
+<a class="btn btn-primary nav-cta magnetic" href="#contact">Start a project</a>
+<button aria-label="Open menu" class="hamb" id="hamb">
+<span></span><span></span><span></span>
+</button>
+</nav>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+<button class="mobile-close" id="mobileClose">×</button><a href="#home">Home</a><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+</div>
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div class="hero-copy">
+<div class="hero-kicker">
             Software Developer <b>+</b> Freelance Digital Creative
           </div>
-          <h1 id="heroTitle">
-            <span class="line"
-              ><span class="word">I build</span>
-              <span class="word highlight">websites</span></span
-            ><span class="line"
-              ><span class="word">that look</span>
-              <span class="word highlight">beautiful</span></span
-            ><span class="line"><span class="word">and work.</span></span>
-          </h1>
-          <p class="hero-lead">
-            I'm Muthumari — a Software Developer with hands-on experience
-            building monitoring dashboards, APIs and management systems in
-            React.js, Go and Laravel. Alongside my day job, I design and build
-            websites for businesses and personal brands as a freelancer.
+<h1 id="heroTitle">
+<span class="line"><span class="word">I turn</span>
+<span class="word highlight">ideas</span></span><span class="line"><span class="word">into</span>
+<span class="word highlight">websites </span></span><span class="line"><span class="word">people remember.</span></span>
+</h1>
+<p class="hero-lead">
+            I'm Muthumari — Software Developer by profession, digital creative
+            by passion. I design and build thoughtful web experiences for
+            businesses, brands and ideas that deserve to stand out.
           </p>
-          <div class="hero-actions">
-            <a href="#freelance" class="btn btn-primary magnetic"
-              >Explore my work</a
-            ><a href="#contact" class="btn btn-light magnetic"
-              >Let's work together</a
-            ><a
-              href="Muthumari-Rajendran-Resume.pdf"
-              class="btn btn-light magnetic"
-              download
-              >Download resume</a
-            >
-          </div>
-          <div class="hero-mini">
-            <div class="mini">
-              <strong>1+</strong><span>Year professional experience</span>
-            </div>
-            <div class="mini">
-              <strong>2</strong><span>Production products shipped</span>
-            </div>
-            <div class="mini">
-              <strong>3+</strong><span>Freelance client sites</span>
-            </div>
-          </div>
-        </div>
-        <div class="hero-art">
-          <div class="hero-ring"></div>
-          <div class="portrait" data-cursor="View">
-            <!-- HERO IMAGE: replace images/profile.jpg with your photo -->
-            <div class="image-slot">
-              <img
-                src="images/Muthumari-rajendran.jpeg"
-                alt="Muthumari Rajendran"
-              />
-              <div class="image-placeholder">
-                <strong>Add your profile photo</strong
-                ><span
-                  >Replace images/profile.jpg with your preferred professional
-                  photo.</span
-                >
-              </div>
-            </div>
-          </div>
-          <div class="float-tag one">React · Go · Laravel</div>
-          <div class="float-tag two">Website Design</div>
-          <div class="float-tag three">Freelance Creative</div>
-          <div class="float-tag four">Responsive UI</div>
-        </div>
-      </div>
-    </section>
-
-    <div class="marquee">
-      <div class="marquee-track">
-        <span>WEBSITE DESIGN</span><span>FRONTEND DEVELOPMENT</span
-        ><span>DIGITAL CREATIVE</span><span>RESPONSIVE UI</span
-        ><span>FREELANCE WORK</span><span>WEBSITE DESIGN</span
-        ><span>FRONTEND DEVELOPMENT</span><span>DIGITAL CREATIVE</span
-        ><span>RESPONSIVE UI</span><span>FREELANCE WORK</span>
-      </div>
-    </div>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="container about-grid">
-        <div class="about-photo reveal" data-cursor="Photo">
-          <!-- ABOUT IMAGE: optional second photo -->
-          <div class="image-slot">
-            <img
-              src="https://i.pinimg.com/736x/f1/fa/28/f1fa28ab537ed648f7ee1e6e770563df.jpg"
-              alt="Muthumari working"
-            />
-            <div class="image-placeholder">
-              <strong>Add a workspace photo</strong
-              ><span>Use a natural working or laptop photo here.</span>
-            </div>
-          </div>
-        </div>
-        <div class="about-copy reveal">
-          <span class="eyebrow">About me</span>
-          <div class="section-head" style="margin-bottom: 20px">
-            <h2>Technical thinking with a creative eye.</h2>
-          </div>
-          <p>
-            My professional background is in software development, where I've
-            spent over a year building real, production applications —
-            monitoring dashboards, alerting systems and management platforms
-            using React.js, Go, Laravel, MySQL and ClickHouse.
+<div class="hero-actions">
+<a class="btn btn-primary magnetic" href="#contact">Let's work together</a><a class="btn btn-light magnetic" href="#work">Explore my work</a><a class="btn btn-light magnetic" download="" href="Muthumari-Rajendran-Resume.pdf">Download resume</a>
+</div>
+<div class="hero-mini">
+<div class="mini">
+<strong>3+</strong><span>Freelance client websites delivered</span>
+</div>
+<div class="mini">
+<strong>1+</strong><span>Year professional dev experience</span>
+</div>
+<div class="mini">
+<strong>2</strong><span>Production software products shipped</span>
+</div>
+</div>
+</div>
+<div class="hero-art">
+<div class="hero-ring"></div>
+<div class="portrait" data-cursor="View">
+<!-- HERO IMAGE: replace images/profile.jpg with your photo -->
+<div class="image-slot">
+<img alt="Muthumari Rajendran" src="images/Muthumari-rajendran.jpeg"/>
+<div class="image-placeholder">
+<strong>Add your profile photo</strong><span>Replace images/profile.jpg with your preferred professional
+                  photo.</span>
+</div>
+</div>
+</div>
+<div class="float-tag one">React · Go · Laravel</div>
+<div class="float-tag two">Website Design</div>
+<div class="float-tag three">Freelance Creative</div>
+<div class="float-tag four">Responsive UI</div>
+</div>
+</div>
+</section>
+<div class="marquee">
+<div class="marquee-track">
+<span>WEBSITE DESIGN</span><span>FRONTEND DEVELOPMENT</span><span>DIGITAL CREATIVE</span><span>RESPONSIVE UI</span><span>FREELANCE WORK</span><span>WEBSITE DESIGN</span><span>FRONTEND DEVELOPMENT</span><span>DIGITAL CREATIVE</span><span>RESPONSIVE UI</span><span>FREELANCE WORK</span>
+</div>
+</div>
+<!-- SERVICES (moved up — first thing a business owner looks for) -->
+<section id="services">
+<div class="container">
+<div class="section-head reveal">
+<span class="eyebrow">Freelance services</span>
+<h2>What I can build for your business.</h2>
+<p>
+            Whether you're starting from scratch or fixing up an old site,
+            here's exactly how I can help.
           </p>
-          <p>
-            Day to day, that means building reusable UI components, integrating
-            REST APIs, working with backend services, and debugging across the
-            UI, API, backend and database layers to ship reliable features.
-          </p>
-          <p>
-            Alongside development, I take on freelance website projects. This
-            lets me combine structured frontend development with visual design,
-            layout, content and business-focused presentation for local
-            businesses and personal brands.
-          </p>
-          <div class="quote">
-            I don't just want a website to exist. I want it to make the business
-            look better, clearer and more trustworthy.
-          </div>
-          <p style="margin-top: 20px; font-size: 13px; color: var(--muted)">
-            <b style="color: var(--deep)">Education:</b> BCA, Sri Parasakthi
-            College for Women (2022–2025) &nbsp;·&nbsp;
-            <b style="color: var(--deep)">Languages:</b> Tamil, English, Hindi
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CAPABILITIES -->
-    <section class="tint-section">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">What I do</span>
-          <h2>One portfolio, two strengths.</h2>
-          <p>
-            Software development for product teams — and creative website work
-            for businesses and personal brands.
-          </p>
-        </div>
-        <div class="cap-grid stagger">
-          <div class="cap-card">
-            <span class="cap-number">01 / DEVELOPMENT</span>
-            <h3>Build functional interfaces</h3>
-            <p>
-              Reusable React components, responsive layouts, API integration and
-              practical frontend development.
-            </p>
-          </div>
-          <div class="cap-card">
-            <span class="cap-number">02 / DESIGN</span>
-            <h3>Create better visual experiences</h3>
-            <p>
-              Clean layouts, typography, spacing, responsive sections and modern
-              visual direction for websites.
-            </p>
-          </div>
-          <div class="cap-card">
-            <span class="cap-number">03 / FREELANCE</span>
-            <h3>Help small businesses go digital</h3>
-            <p>
-              Business websites, landing pages, redesigns and digital creative
-              support with a polished presentation.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Professional experience</span>
-          <h2>Where I learned to build for real users.</h2>
-        </div>
-        <div class="timeline" id="timeline">
-          <div class="timeline-fill" id="timelineFill"></div>
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <div>
-                  <div class="timeline-role">Software Developer</div>
-                  <div class="timeline-company">Linuxoft</div>
-                </div>
-                <div class="timeline-date">Nov 2025 — Aug 2026</div>
-              </div>
-              <p>
-                Developed and maintained monitoring and management applications
-                using React.js, Go, PHP Laravel, MySQL and ClickHouse. Built
-                reusable, responsive React components for dashboards, monitoring
-                modules, alerts and logs, and integrated REST APIs with both
-                frontend and backend services.
-              </p>
-              <p>
-                Developed and enhanced Linux and Windows monitoring modules for
-                surfacing system and resource-related information, and worked
-                with MySQL and ClickHouse for application, monitoring, log and
-                audit data. Debugged and resolved issues across UI, API, backend
-                and database layers while shipping new feature enhancements.
-              </p>
-              <div class="tags">
-                <span>React.js</span><span>JavaScript</span><span>Go</span
-                ><span>Laravel</span><span>MySQL</span><span>ClickHouse</span
-                ><span>REST APIs</span>
-              </div>
-            </div>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <div>
-                  <div class="timeline-role">Software Trainer</div>
-                  <div class="timeline-company">
-                    CADD Expert Training Institute
-                  </div>
-                </div>
-                <div class="timeline-date">Jul 2025 — Aug 2025</div>
-              </div>
-              <p>
-                Trained students in HTML, CSS, JavaScript, responsive web
-                development and practical website projects, guiding learners
-                through frontend exercises and troubleshooting.
-              </p>
-              <div class="tags">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span
-                ><span>Mentoring</span>
-              </div>
-            </div>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <div>
-                  <div class="timeline-role">
-                    Bachelor of Computer Applications (BCA)
-                  </div>
-                  <div class="timeline-company">
-                    Sri Parasakthi College for Women, Courtallam, Tenkasi
-                  </div>
-                </div>
-                <div class="timeline-date">2022 — 2025</div>
-              </div>
-              <p>
-                Built the foundation in programming, databases and web
-                development that led into professional software development
-                work.
-              </p>
-              <div class="tags"><span>Education</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROFESSIONAL PROJECTS -->
-    <section id="projects">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Professional projects</span>
-          <h2>Real software work from my development journey.</h2>
-          <p>
-            These are software-development projects I worked on professionally.
-            Client/freelance work is shown separately below.
-          </p>
-        </div>
-        <div class="work-grid stagger">
-          <div class="project-card" data-cursor="View">
-            <div class="project-visual">
-              <span class="project-label">01 · Software</span>
-              <div class="image-slot">
-                <img
-                  src="https://i.pinimg.com/736x/3b/3c/4a/3b3c4a009504b44f20f082a076edcb8b.jpg"
-                  alt="Argus monitoring platform"
-                />
-                <div class="image-placeholder">
-                  <strong>Add Argus screenshot</strong
-                  ><span
-                    >Use a clean dashboard screenshot or approved project
-                    visual.</span
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="project-body">
-              <h3>Argus</h3>
-              <div class="project-type">
-                Monitoring & observability platform
-              </div>
-              <p>
-                A real-time monitoring product for Linux and Windows
-                environments. I built reusable React.js components for
-                dashboards and monitoring modules, and integrated REST APIs to
-                surface live system health, services, processes, logs, alerts
-                and resource information — backed by Go services and
-                MySQL/ClickHouse for application, monitoring, log and audit
-                data.
-              </p>
-              <div class="project-meta">
-                <div class="tags">
-                  <span>React.js</span><span>Go</span><span>MySQL</span
-                  ><span>ClickHouse</span><span>REST APIs</span>
-                </div>
-                <small>Professional work</small>
-              </div>
-            </div>
-          </div>
-          <div class="project-card" data-cursor="View">
-            <div class="project-visual">
-              <span class="project-label">02 · Software</span>
-              <div class="image-slot">
-                <img
-                  src="https://i.pinimg.com/736x/aa/17/b9/aa17b9874e39e3fe5c3d209e019965b8.jpg"
-                  alt="LRO management system"
-                />
-                <div class="image-placeholder">
-                  <strong>Add LRO screenshot</strong
-                  ><span
-                    >Use an approved interface screenshot or project
-                    mockup.</span
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="project-body">
-              <h3>LRO</h3>
-              <div class="project-type">
-                Legal Rights Organisation management system
-              </div>
-              <p>
-                A real-time management product built for member and case
-                management using Laravel and MySQL. I implemented and enhanced
-                REST APIs, CRUD operations, authentication and role-based
-                authorization, and developed responsive interfaces integrated
-                with the backend services.
-              </p>
-              <div class="project-meta">
-                <div class="tags">
-                  <span>Laravel</span><span>PHP</span><span>MySQL</span
-                  ><span>REST APIs</span>
-                </div>
-                <small>Professional work</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FREELANCE WORK -->
-    <section class="freelance-work" id="freelance">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Freelance / client work</span>
-          <h2>Websites I've created beyond my day job.</h2>
-          <p>
-            This is the section that helps potential local businesses understand
-            what I can create for them.
-          </p>
-        </div>
-        <div class="featured-grid stagger">
-          <div class="featured-card" data-cursor="Explore">
-            <div class="featured-image">
-              <div class="image-slot">
-                <img
-                  src="images/apex-academy.png"
-                  alt="Apex Academy coaching center website"
-                />
-                <div class="image-placeholder">
-                  <strong>Add Apex Academy screenshot</strong
-                  ><span>Best choice: homepage hero + courses section.</span>
-                </div>
-              </div>
-            </div>
-            <div class="featured-body">
-              <span class="service-label">Freelance website redesign</span>
-              <h3>Apex Academy Coaching Center</h3>
-              <p>
-                Redesigned a coaching and competitive-exam training brand's site
-                — clearer sections, course presentation, an app showcase and a
-                stronger content hierarchy.
-              </p>
-              <div class="tags">
-                <span>Redesign</span><span>Responsive UI</span
-                ><span>Education</span>
-              </div>
-            </div>
-          </div>
-          <div class="featured-card" data-cursor="Explore">
-            <div class="featured-image">
-              <div class="image-slot">
-                <img src="images/beautysalon.png" alt="Beauty salon website" />
-                <div class="image-placeholder">
-                  <strong>Add beauty salon screenshot</strong
-                  ><span>Best choice: homepage hero + services section.</span>
-                </div>
-              </div>
-            </div>
-            <div class="featured-body">
-              <span class="service-label">Freelance website build</span>
-              <h3>Beauty Salon Website</h3>
-              <p>
-                A beauty-focused website built from the ground up with a softer
-                visual style, service presentation and attractive, responsive
-                sections.
-              </p>
-              <div class="tags">
-                <span>UI design</span><span>New build</span
-                ><span>Responsive</span>
-              </div>
-            </div>
-          </div>
-          <div class="featured-card">
-            <div class="featured-image">
-              <div class="image-slot">
-                <img
-                  src="images/freelance-concept.jpg"
-                  alt="Freelance website concept"
-                />
-                <div class="image-placeholder">
-                  <strong>Add your next project</strong
-                  ><span
-                    >Screenshot of your latest client site or design
-                    concept.</span
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="featured-body">
-              <span class="service-label">Coming next</span>
-              <h3>Your next project</h3>
-              <p>
-                A slot for the next client site — keep this card so the
-                portfolio grows without redesigning the whole page.
-              </p>
-              <div class="tags"><span>Open slot</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Freelance services</span>
-          <h2>What a business can hire me for.</h2>
-          <p>
-            Keep this section focused on services you can confidently deliver
-            instead of listing every possible digital service.
-          </p>
-        </div>
-        <div class="services-grid stagger">
-          <div class="service-card">
-            <span class="num">01</span>
-            <h3>Business websites</h3>
-            <p>
+</div>
+<div class="services-grid stagger">
+<div class="service-card">
+<span class="num">01</span>
+<h3>Business websites</h3>
+<p>
               Modern responsive websites for local businesses, services and
               small brands.
             </p>
-          </div>
-          <div class="service-card">
-            <span class="num">02</span>
-            <h3>Website redesign</h3>
-            <p>
+</div>
+<div class="service-card">
+<span class="num">02</span>
+<h3>Website redesign</h3>
+<p>
               Improve an existing website's visual hierarchy, responsiveness and
               presentation.
             </p>
-          </div>
-          <div class="service-card">
-            <span class="num">03</span>
-            <h3>Landing pages</h3>
-            <p>
+</div>
+<div class="service-card">
+<span class="num">03</span>
+<h3>Landing pages</h3>
+<p>
               Focused pages for campaigns, services, products, events and
               personal brands.
             </p>
-          </div>
-          <div class="service-card">
-            <span class="num">04</span>
-            <h3>Digital creative support</h3>
-            <p>
+</div>
+<div class="service-card">
+<span class="num">04</span>
+<h3>Digital creative support</h3>
+<p>
               Website content sections, social creatives, simple visual assets
               and video support.
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="process">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow" style="color: #cdb8ff">My process</span>
-          <h2>A simple process that keeps projects clear.</h2>
-          <p>Useful for clients who may not know exactly what they need yet.</p>
-        </div>
-        <div class="process-grid stagger" id="processGrid">
-          <div class="process-track"></div>
-          <div class="process-fill" id="processFill"></div>
-
-          <div class="step">
-            <div class="step-no">01</div>
-            <h3>Understand</h3>
-            <p>Discuss the business, audience, goals and required pages.</p>
-          </div>
-          <div class="step">
-            <div class="step-no">02</div>
-            <h3>Plan</h3>
-            <p>Define the content structure, visual direction and page flow.</p>
-          </div>
-          <div class="step">
-            <div class="step-no">03</div>
-            <h3>Build</h3>
-            <p>Create the responsive website and refine the visual details.</p>
-          </div>
-          <div class="step">
-            <div class="step-no">04</div>
-            <h3>Polish</h3>
-            <p>Review, fix responsive issues and prepare the final website.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="tint-section skills-section" id="skills">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Skills & tools</span>
-          <h2>The technical side behind the visuals.</h2>
-          <p>
+</div>
+</div>
+</div>
+</section>
+<!-- FREELANCE WORK — the section a business owner actually wants to see -->
+<section class="tint-section freelance-work" id="work">
+<div class="container">
+<div class="section-head reveal">
+<span class="eyebrow">Freelance work</span>
+<h2>Websites I've built for real businesses.</h2>
+<p>
+            A look at recent client projects — redesigns and full builds — for
+            a coaching centre, a salon, and businesses like yours.
+          </p>
+</div>
+<div class="featured-grid stagger">
+<div class="featured-card" data-cursor="View">
+<div class="featured-image">
+<div class="image-slot">
+<img alt="Apex Academy coaching center website" src="images/apex-academy.png"/>
+<div class="image-placeholder">
+<strong>Add Apex Academy screenshot</strong>
+</div>
+</div>
+</div>
+<div class="featured-body">
+<span class="service-label">Education · Redesign</span>
+<h3>Apex Academy</h3>
+<p>
+                Redesigned a coaching centre website with clearer course
+                sections, stronger presentation and a fully responsive layout
+                that works well on every device.
+              </p>
+<div class="tags">
+<span>UI Design</span><span>Redesign</span><span>Responsive</span>
+</div>
+</div>
+</div>
+<div class="featured-card" data-cursor="View">
+<div class="featured-image">
+<div class="image-slot">
+<img alt="Beauty salon website" src="images/beautysalon.png"/>
+<div class="image-placeholder">
+<strong>Add beauty salon screenshot</strong>
+</div>
+</div>
+</div>
+<div class="featured-body">
+<span class="service-label">Business Website</span>
+<h3>Beauty Salon</h3>
+<p>
+                Designed and built a soft, service-focused website with
+                attractive, responsive sections to showcase treatments and
+                bring in bookings.
+              </p>
+<div class="tags">
+<span>UI Design</span><span>Website</span><span>Responsive</span>
+</div>
+</div>
+</div>
+<div class="featured-card" data-cursor="View">
+<div class="featured-image" style="display:flex;align-items:center;justify-content:center;">
+<div class="image-placeholder" style="border:2px dashed #d7c6ea;height:100%;width:100%;border-radius:18px;">
+<strong>Your business, next</strong>
+<span>Let's build a website that fits your brand.</span>
+</div>
+</div>
+<div class="featured-body">
+<span class="service-label">Start a project</span>
+<h3>Got an idea in mind?</h3>
+<p>
+                Tell me about your business and what you need — I'll help you
+                figure out the right pages, structure and design direction.
+              </p>
+<a class="btn btn-primary magnetic" href="#contact" style="margin-top:auto;">Let's talk</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WHY WORK WITH ME -->
+<section id="why">
+<div class="container">
+<div class="section-head reveal">
+<span class="eyebrow">Why work with me</span>
+<h2>What you get when we work together.</h2>
+</div>
+<div class="why-grid stagger">
+<div class="why-card">
+<h3>Clear communication</h3>
+<p>
+              I keep things simple — you tell me what your business needs, I
+              explain the plan in plain language, no jargon.
+            </p>
+</div>
+<div class="why-card">
+<h3>Built to perform</h3>
+<p>
+              Every site is responsive, fast-loading and structured so your
+              customers can find what they need on any device.
+            </p>
+</div>
+<div class="why-card">
+<h3>Developer-level quality</h3>
+<p>
+              Backed by real production experience — your website is built
+              with the same care as professional software products.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- ABOUT -->
+<section class="tint-section" id="about">
+<div class="container about-grid">
+<div class="about-photo reveal" data-cursor="Photo">
+<div class="image-slot">
+<img alt="Muthumari working" src="https://i.pinimg.com/736x/f1/fa/28/f1fa28ab537ed648f7ee1e6e770563df.jpg"/>
+<div class="image-placeholder">
+<strong>Add profile photo</strong>
+</div>
+</div>
+</div>
+<div class="about-copy reveal">
+<span class="eyebrow">About me</span>
+<div class="section-head">
+<h2>Building with logic. Designing with intention.</h2>
+</div>
+<p>
+            I'm Muthumari, a Software Developer and Web Designer who enjoys
+            turning ideas into practical, polished digital experiences.
+          </p>
+<p>
+            My work spans React.js, Go, Laravel, REST APIs, MySQL and ClickHouse
+            — from software applications and monitoring dashboards to responsive
+            websites for businesses.
+          </p>
+<div class="cap-grid">
+<div class="cap-card">
+<span class="cap-number">EDUCATION</span>
+<h3>BCA Graduate</h3>
+<p>Sri Parasakthi College for Women</p>
+</div>
+<div class="cap-card">
+<span class="cap-number">LOCATION</span>
+<h3>Tamil Nadu</h3>
+<p>Open to freelance work</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- EXPERIENCE -->
+<section id="experience">
+<div class="container">
+<div class="section-head reveal">
+<span class="eyebrow">Professional experience</span>
+<h2>Where I learned to build for real users.</h2>
+</div>
+<div class="timeline" id="timeline">
+<div class="timeline-fill" id="timelineFill"></div>
+<div class="timeline-item reveal">
+<div class="timeline-dot"></div>
+<div class="timeline-card">
+<div class="timeline-top">
+<div>
+<div class="timeline-role">Software Developer</div>
+<div class="timeline-company">Linuxoft</div>
+</div>
+<div class="timeline-date">Nov 2025 — Aug 2026</div>
+</div>
+<p>
+                Built and maintained monitoring and management applications
+                using React.js, Go, Laravel, MySQL and ClickHouse — reusable
+                dashboard components, Linux/Windows monitoring modules, REST API
+                integration, and debugging across the UI, API, backend and
+                database layers.
+              </p>
+<div class="tags">
+<span>React.js</span><span>JavaScript</span><span>Go</span><span>Laravel</span><span>MySQL</span><span>ClickHouse</span><span>REST APIs</span>
+</div>
+</div>
+</div>
+<div class="timeline-item reveal">
+<div class="timeline-dot"></div>
+<div class="timeline-card">
+<div class="timeline-top">
+<div>
+<div class="timeline-role">Software Trainer</div>
+<div class="timeline-company">
+                    CADD Expert Training Institute
+                  </div>
+</div>
+<div class="timeline-date">Jul 2025 — Aug 2025</div>
+</div>
+<p>
+                Trained students in HTML, CSS, JavaScript and responsive web
+                development through hands-on projects and troubleshooting.
+              </p>
+<div class="tags">
+<span>HTML</span><span>CSS</span><span>JavaScript</span><span>Mentoring</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SKILLS -->
+<section class="tint-section skills-section" id="skills">
+<div class="container">
+<div class="section-head reveal">
+<span class="eyebrow">Skills &amp; tools</span>
+<h2>The technical side behind the visuals.</h2>
+<p>
             The four tools I reach for most, plus the wider stack that supports
             them.
           </p>
-        </div>
-
-        <div class="spotlight-grid stagger" id="spotlightGrid">
-          <div class="spotlight-card" data-level="88">
-            <svg class="ring" viewBox="0 0 120 120">
-              <circle class="ring-track" cx="60" cy="60" r="52"></circle>
-              <circle class="ring-fill" cx="60" cy="60" r="52"></circle>
-            </svg>
-            <div class="ring-value">
-              <span class="count">0</span><small>%</small>
-            </div>
-            <div class="spotlight-info">
-              <strong>React.js</strong><span>Component-driven interfaces</span>
-            </div>
-          </div>
-          <div class="spotlight-card" data-level="82">
-            <svg class="ring" viewBox="0 0 120 120">
-              <circle class="ring-track" cx="60" cy="60" r="52"></circle>
-              <circle class="ring-fill" cx="60" cy="60" r="52"></circle>
-            </svg>
-            <div class="ring-value">
-              <span class="count">0</span><small>%</small>
-            </div>
-            <div class="spotlight-info">
-              <strong>Go</strong><span>Backend services & APIs</span>
-            </div>
-          </div>
-          <div class="spotlight-card" data-level="80">
-            <svg class="ring" viewBox="0 0 120 120">
-              <circle class="ring-track" cx="60" cy="60" r="52"></circle>
-              <circle class="ring-fill" cx="60" cy="60" r="52"></circle>
-            </svg>
-            <div class="ring-value">
-              <span class="count">0</span><small>%</small>
-            </div>
-            <div class="spotlight-info">
-              <strong>Laravel</strong><span>PHP application development</span>
-            </div>
-          </div>
-          <div class="spotlight-card" data-level="85">
-            <svg class="ring" viewBox="0 0 120 120">
-              <circle class="ring-track" cx="60" cy="60" r="52"></circle>
-              <circle class="ring-fill" cx="60" cy="60" r="52"></circle>
-            </svg>
-            <div class="ring-value">
-              <span class="count">0</span><small>%</small>
-            </div>
-            <div class="spotlight-info">
-              <strong>Website Design</strong
-              ><span>Layout, type & visual polish</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skills-grid stagger">
-          <div class="skill-card">
-            <h3><span class="icon-dot"></span>Frontend</h3>
-            <div class="skill-list">
-              <span>React.js</span><span>JavaScript</span><span>HTML5</span
-              ><span>CSS3</span><span>Next.js</span><span>Material UI</span>
-            </div>
-          </div>
-          <div class="skill-card">
-            <h3><span class="icon-dot"></span>Backend & data</h3>
-            <div class="skill-list">
-              <span>Go</span><span>PHP</span><span>Laravel</span
-              ><span>REST APIs</span><span>MySQL</span><span>ClickHouse</span>
-            </div>
-          </div>
-          <div class="skill-card">
-            <h3><span class="icon-dot"></span>Workflow</h3>
-            <div class="skill-list">
-              <span>Git / GitHub</span><span>Postman</span><span>Linux</span
-              ><span>VS Code</span><span>Responsive Design</span>
-            </div>
-          </div>
-          <div class="skill-card">
-            <h3><span class="icon-dot"></span>Creative</h3>
-            <div class="skill-list">
-              <span>Website Design</span><span>Content Layout</span
-              ><span>Social Media Creative</span><span>Video Editing</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY -->
-    <section>
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Why work with me</span>
-          <h2>Small team energy, developer discipline.</h2>
-        </div>
-        <div class="why-grid stagger">
-          <div class="why-card">
-            <h3>Design + code</h3>
-            <p>
-              I understand both the visual side of a page and the frontend work
-              needed to make it responsive.
-            </p>
-          </div>
-          <div class="why-card">
-            <h3>Practical communication</h3>
-            <p>
-              I keep the process simple and explain what is being changed
-              instead of hiding everything behind technical terms.
-            </p>
-          </div>
-          <div class="why-card">
-            <h3>Always improving</h3>
-            <p>
-              I'm early in my freelance journey, which means I'm focused on
-              learning, refining and delivering stronger work with every
-              project.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">FAQ</span>
-          <h2>Answers before you ask.</h2>
-          <p>
+</div>
+<div class="skills-grid stagger">
+<div class="skill-card">
+<h3><span class="icon-dot"></span>Frontend</h3>
+<div class="skill-list">
+<span>React.js</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Next.js</span><span>Material UI</span>
+</div>
+</div>
+<div class="skill-card">
+<h3><span class="icon-dot"></span>Backend &amp; data</h3>
+<div class="skill-list">
+<span>Go</span><span>PHP</span><span>Laravel</span><span>REST APIs</span><span>MySQL</span><span>ClickHouse</span>
+</div>
+</div>
+<div class="skill-card">
+<h3><span class="icon-dot"></span>Workflow</h3>
+<div class="skill-list">
+<span>Git / GitHub</span><span>Postman</span><span>Linux</span><span>VS Code</span><span>Responsive Design</span>
+</div>
+</div>
+<div class="skill-card">
+<h3><span class="icon-dot"></span>Creative</h3>
+<div class="skill-list">
+<span>Website Design</span><span>Content Layout</span><span>Social Media Creative</span><span>Video Editing</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PROFESSIONAL SOFTWARE WORK (recruiter-focused, kept separate from client sites) -->
+<section id="software-work">
+<div class="container">
+<div class="section-head reveal">
+<span class="eyebrow">Professional software work</span>
+<h2>Products I've built as a developer.</h2>
+<p>
+            Software applications built in a professional team environment —
+            shared here for recruiters and technical reviewers.
+          </p>
+</div>
+<div class="work-grid compact-2 stagger">
+<div class="project-card" data-cursor="View">
+<div class="project-visual">
+<span class="project-label">Professional</span>
+<div class="image-slot">
+<img alt="Argus monitoring platform" src="https://i.pinimg.com/736x/3b/3c/4a/3b3c4a009504b44f20f082a076edcb8b.jpg"/>
+<div class="image-placeholder">
+<strong>Add Argus screenshot</strong>
+</div>
+</div>
+</div>
+<div class="project-body">
+<h3>Argus</h3>
+<div class="project-type">Monitoring &amp; Observability</div>
+<p>
+                Real-time monitoring for Linux and Windows environments with
+                dashboards, alerts, logs and management modules.
+              </p>
+<div class="tags">
+<span>React.js</span><span>Go</span><span>MySQL</span><span>ClickHouse</span>
+</div>
+<div class="project-meta">
+<small>Professional Work</small>
+</div>
+</div>
+</div>
+<div class="project-card" data-cursor="View">
+<div class="project-visual">
+<span class="project-label">Professional</span>
+<div class="image-slot">
+<img alt="LRO management system" src="https://i.pinimg.com/736x/aa/17/b9/aa17b9874e39e3fe5c3d209e019965b8.jpg"/>
+<div class="image-placeholder">
+<strong>Add LRO screenshot</strong>
+</div>
+</div>
+</div>
+<div class="project-body">
+<h3>LRO</h3>
+<div class="project-type">Management Platform</div>
+<p>
+                A web-based management application focused on structured
+                workflows, data management and responsive interfaces.
+              </p>
+<div class="tags">
+<span>React.js</span><span>Laravel</span><span>MySQL</span><span>REST APIs</span>
+</div>
+<div class="project-meta">
+<small>Professional Work</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="tint-section" id="faq">
+<div class="container">
+<div class="section-head reveal">
+<span class="eyebrow">FAQ</span>
+<h2>Answers before you ask.</h2>
+<p>
             Common questions from businesses considering a freelance website
             project.
           </p>
-        </div>
-
-        <div class="faq-list stagger">
-          <div class="faq-item">
-            <button class="faq-q" type="button">
-              <span>What type of websites do you create?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a-wrap">
-              <div class="faq-a">
+</div>
+<div class="faq-list stagger">
+<div class="faq-item">
+<button class="faq-q" type="button">
+<span>What type of websites do you create?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-a-wrap">
+<div class="faq-a">
                 I create modern, responsive websites for businesses, personal
                 brands, portfolios, coaching centres, salons and other local
                 businesses.
               </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q" type="button">
-              <span>Can you redesign an existing website?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a-wrap">
-              <div class="faq-a">
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-q" type="button">
+<span>Can you redesign an existing website?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-a-wrap">
+<div class="faq-a">
                 Yes. I can improve the layout, visual design, responsiveness,
                 content presentation and overall user experience of an existing
                 website.
               </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q" type="button">
-              <span>Do you create mobile-friendly websites?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a-wrap">
-              <div class="faq-a">
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-q" type="button">
+<span>Do you create mobile-friendly websites?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-a-wrap">
+<div class="faq-a">
                 Yes. I design websites to work smoothly across mobile phones,
                 tablets and desktop screens.
               </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q" type="button">
-              <span
-                >Can you help with website content and social media
-                designs?</span
-              >
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a-wrap">
-              <div class="faq-a">
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-q" type="button">
+<span>Can you help with website content and social media
+                designs?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-a-wrap">
+<div class="faq-a">
                 Yes. I can also help with content layout, social media
                 creatives, basic digital marketing materials and visual content.
               </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q" type="button">
-              <span>How can I start a project with you?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-a-wrap">
-              <div class="faq-a">
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-q" type="button">
+<span>How can I start a project with you?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-a-wrap">
+<div class="faq-a">
                 You can contact me through the contact section and share your
                 requirements, preferred style and project details. We can then
                 discuss the scope and next steps.
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-        <div class="contact-box reveal">
-          <div>
-            <span class="eyebrow">Let's create something</span>
-            <h2>Have a website idea?</h2>
-            <p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTACT -->
+<section id="contact">
+<div class="container">
+<div class="contact-box reveal">
+<div>
+<span class="eyebrow">Let's create something</span>
+<h2>Have a website idea?</h2>
+<p>
               Whether you need a new business website, a redesign or a polished
               landing page, let's talk about what you want to build.
             </p>
-            <div class="contact-details">
-              <a href="mailto:rmuthumari128@gmail.com"
-                >rmuthumari128@gmail.com</a
-              ><a href="tel:+919361948552">+91 93619 48552</a
-              ><a
-                href="https://www.linkedin.com/in/muthumari-rajendran/"
-                target="_blank"
-                rel="noopener"
-                >LinkedIn</a
-              ><a href="Muthumari-Rajendran-Resume.pdf" download
-                >Download resume (PDF)</a
-              ><span
-                style="
+<div class="contact-details">
+<a href="mailto:rmuthumari128@gmail.com">rmuthumari128@gmail.com</a><a href="tel:+919361948552">+91 93619 48552</a><a href="https://www.linkedin.com/in/muthumari-rajendran/" rel="noopener" target="_blank">LinkedIn</a><a download="" href="Muthumari-Rajendran-Resume.pdf">Download resume (PDF)</a><span style="
                   font-size: 12px;
                   color: var(--muted);
                   font-weight: 600;
                   margin-top: 2px;
-                "
-                >Tenkasi, Tamil Nadu</span
-              >
-            </div>
-          </div>
-          <div class="contact-note">
-            <h3>For a quick project discussion</h3>
-            <p>
+                ">Tenkasi, Tamil Nadu</span>
+</div>
+</div>
+<div class="contact-note">
+<h3>For a quick project discussion</h3>
+<p>
               Send me the business type, pages you need and any reference
               websites you like. I'll understand the requirement and we can
               discuss the next step.
             </p>
-            <a
-              class="btn btn-primary magnetic"
-              href="mailto:rmuthumari128@gmail.com?subject=Website%20Project%20Enquiry"
-              >Email me about a project</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container footer-row">
-        <div>
-          <div class="footer-name">Muthumari Rajendran</div>
-          <div class="footer-sub">
+<a class="btn btn-primary magnetic" href="mailto:rmuthumari128@gmail.com?subject=Website%20Project%20Enquiry">Email me about a project</a>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="container footer-row">
+<div>
+<div class="footer-name">Muthumari Rajendran</div>
+<div class="footer-sub">
             Software Developer · Freelance Digital Creative
           </div>
-        </div>
-        <div class="footer-links">
-          <a href="#about">About</a><a href="#skills">Skills</a
-          ><a href="#projects">Projects</a><a href="#freelance">Freelance</a
-          ><a href="#contact">Contact</a>
-        </div>
-        <div class="footer-social">
-          <a href="mailto:rmuthumari128@gmail.com" aria-label="Email">✉</a>
-          <a
-            href="https://www.linkedin.com/in/muthumari-rajendran/"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn"
-            >in</a
-          >
-          <a href="tel:+919361948552" aria-label="Phone">☎</a>
-        </div>
-      </div>
-      <div class="container footer-bottom">
-        <span>© 2026 Muthumari Rajendran. All rights reserved.</span>
-        <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
-      </div>
-    </footer>
-
-    <script>
+</div>
+<div class="footer-links">
+<a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+</div>
+<div class="footer-social">
+<a aria-label="Email" href="mailto:rmuthumari128@gmail.com">✉</a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/muthumari-rajendran/" rel="noopener" target="_blank">in</a>
+<a aria-label="Phone" href="tel:+919361948552">☎</a>
+</div>
+</div>
+<div class="container footer-bottom">
+<span>© 2026 Muthumari Rajendran. All rights reserved.</span>
+<button aria-label="Back to top" class="to-top" id="toTop">↑</button>
+</div>
+</footer>
+<script>
       (function () {
         const reduce = window.matchMedia(
           "(prefers-reduced-motion: reduce)",
@@ -3004,14 +2776,12 @@
         // Active nav
         const navItems = [...document.querySelectorAll("[data-nav]")];
         const ids = [
+          "work",
+          "services",
           "about",
           "experience",
           "skills",
-          "projects",
-          "freelance",
-          "services",
-          "faq",
-          "contact",
+          "faq"
         ];
         function activeNav() {
           let current = "";
@@ -3194,11 +2964,10 @@
             el.classList.toggle("active", i <= stepIdx);
           });
           stepIdx = (stepIdx + 1) % stepNos.length;
-          // pause a bit longer on the "all lit" frame before resetting
           setTimeout(cycleSteps, stepIdx === 0 ? 1800 : 1000);
         }
         cycleSteps();
       }
     </script>
-  </body>
+</body>
 </html>
