@@ -1713,6 +1713,81 @@
       .image-help b {
         color: var(--deep);
       }
+
+
+      .download-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 18px;
+  min-width: 280px;
+
+  background: #ffffff;
+  color: #38205f;
+
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: 14px;
+
+  box-shadow: 0 12px 35px rgba(56, 32, 95, 0.18);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.download-toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.toast-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #7c3aed;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.download-toast strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.download-toast small {
+  display: block;
+  font-size: 12px;
+  color: #756b82;
+}
+
+@media (max-width: 600px) {
+  .download-toast {
+    left: 16px;
+    right: 16px;
+    bottom: 20px;
+    min-width: auto;
+  }
+}
       /* mobile */
       @media (max-width: 1100px) {
         .work-grid {
@@ -2091,17 +2166,7 @@
 <a class="btn btn-primary magnetic" href="#contact">Let's work together</a>
 <a class="btn btn-light magnetic" href="#work">Explore my work</a>
 <a class="btn btn-light magnetic"  id="resumeDownload" download href="assets/Muthumari_Rajendran_Resume.PDF">Download resume</a>
-<span
-  id="downloadMessage"
-  style="
-    display:none;
-    margin-left:10px;
-    font-size:13px;
-    color:#6b2c61;
-  "
->
-  ✓ Resume download started
-</span>
+
 </div>
 <div class="hero-mini">
 <div class="mini">
@@ -2589,17 +2654,7 @@
 <div class="contact-details">
 <a href="mailto:rmuthumari128@gmail.com">rmuthumari128@gmail.com</a><a href="tel:+919361948552">+91 93619 48552</a><a href="https://www.linkedin.com/in/muthumari-rajendran/" rel="noopener" target="_blank">LinkedIn</a>
 <a download  id="resumeDownload" href="assets/Muthumari_Rajendran_Resume.PDF">Download resume (PDF)</a>
-<span
-  id="downloadMessage"
-  style="
-    display:none;
-    margin-left:10px;
-    font-size:13px;
-    color:#6b2c61;
-  "
->
-  ✓ Resume download started
-</span>
+
 <span style="
                   font-size: 12px;
                   color: var(--muted);
@@ -2642,6 +2697,16 @@
 <button aria-label="Back to top" class="to-top" id="toTop">↑</button>
 </div>
 </footer>
+
+
+<div id="downloadToast" class="download-toast">
+  <span class="toast-icon">✓</span>
+  <div>
+    <strong>Resume Downloaded</strong>
+    <small>Your resume has been downloaded successfully.</small>
+  </div>
+</div>
+
 <script>
       (function () {
         const reduce = window.matchMedia(
@@ -2999,15 +3064,19 @@
         cycleSteps();
       }
 
-        document.getElementById("resumeDownload").addEventListener("click", function () {
-    const message = document.getElementById("downloadMessage");
+  const resumeDownload = document.getElementById("resumeDownload");
+  const downloadToast = document.getElementById("downloadToast");
 
-    message.style.display = "inline";
+  if (resumeDownload && downloadToast) {
+    resumeDownload.addEventListener("click", function () {
+      downloadToast.classList.add("show");
 
-    setTimeout(() => {
-      message.style.display = "none";
-    }, 3000);
-  });
+      setTimeout(() => {
+        downloadToast.classList.remove("show");
+      }, 3500);
+    });
+  }
+  
     </script>
 </body>
 </html>
