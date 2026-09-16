@@ -2090,7 +2090,18 @@
 <div class="hero-actions">
 <a class="btn btn-primary magnetic" href="#contact">Let's work together</a>
 <a class="btn btn-light magnetic" href="#work">Explore my work</a>
-<a class="btn btn-light magnetic" download href="assets/Muthumari_Rajendran_Resume.PDF">Download resume</a>
+<a class="btn btn-light magnetic"  id="resumeDownload" download href="assets/Muthumari_Rajendran_Resume.PDF">Download resume</a>
+<span
+  id="downloadMessage"
+  style="
+    display:none;
+    margin-left:10px;
+    font-size:13px;
+    color:#6b2c61;
+  "
+>
+  ✓ Resume download started
+</span>
 </div>
 <div class="hero-mini">
 <div class="mini">
@@ -2577,7 +2588,19 @@
             </p>
 <div class="contact-details">
 <a href="mailto:rmuthumari128@gmail.com">rmuthumari128@gmail.com</a><a href="tel:+919361948552">+91 93619 48552</a><a href="https://www.linkedin.com/in/muthumari-rajendran/" rel="noopener" target="_blank">LinkedIn</a>
-<a download href="assets/Muthumari_Rajendran_Resume.PDF">Download resume (PDF)</a><span style="
+<a download  id="resumeDownload" href="assets/Muthumari_Rajendran_Resume.PDF">Download resume (PDF)</a>
+<span
+  id="downloadMessage"
+  style="
+    display:none;
+    margin-left:10px;
+    font-size:13px;
+    color:#6b2c61;
+  "
+>
+  ✓ Resume download started
+</span>
+<span style="
                   font-size: 12px;
                   color: var(--muted);
                   font-weight: 600;
@@ -2975,6 +2998,16 @@
         }
         cycleSteps();
       }
+
+        document.getElementById("resumeDownload").addEventListener("click", function () {
+    const message = document.getElementById("downloadMessage");
+
+    message.style.display = "inline";
+
+    setTimeout(() => {
+      message.style.display = "none";
+    }, 3000);
+  });
     </script>
 </body>
 </html>
